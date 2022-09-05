@@ -23,7 +23,7 @@ public class UserDAOService {
     }
 
     public User save(User user) { // 등록
-        if(user.getId() == null) {
+        if(user.getId() == null) { // ID의 값이 존재하지 않으면 ID 값을 넣어준다.
             user.setId(++usersCount);
         }
 
