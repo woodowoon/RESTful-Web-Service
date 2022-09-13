@@ -1,5 +1,6 @@
 package com.example.restfulwebservice.user;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -11,7 +12,8 @@ import java.util.Date;
 
 @Data // lombok를 통해 생성자를 생성해주지 않아도 괜찮다.
 @AllArgsConstructor
-@JsonIgnoreProperties(value = {"password"}) // JsonIgnoreProperties 로도 데이터를 클라이언트에게 숨기는게 가능하다.
+// @JsonIgnoreProperties(value = {"password"}) // JsonIgnoreProperties 로도 데이터를 클라이언트에게 숨기는게 가능하다.
+@JsonFilter("UserInfo")
 public class User {
     private Integer id;
 
