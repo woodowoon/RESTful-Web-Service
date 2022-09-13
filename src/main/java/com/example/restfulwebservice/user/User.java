@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
@@ -12,6 +13,7 @@ import java.util.Date;
 
 @Data // lombok를 통해 생성자를 생성해주지 않아도 괜찮다.
 @AllArgsConstructor
+@NoArgsConstructor // 디폴트 생성자 생성 어노테이션
 // @JsonIgnoreProperties(value = {"password"}) // JsonIgnoreProperties 로도 데이터를 클라이언트에게 숨기는게 가능하다.
 @JsonFilter("UserInfo")
 public class User {
